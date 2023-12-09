@@ -1,0 +1,15 @@
+1) Препроцессинг
+$ g++ -E main.cpp -o main.ii
+
+2) Компиляция
+$ g++ -S main.ii -o main.s
+
+3) Ассемблирование
+$ as main.s -o main.o
+
+4) Линковка
+$ g++ -o main.bin main.o
+
+*) Запуск
+$ ./main.bin 
+
