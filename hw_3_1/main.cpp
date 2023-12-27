@@ -2,23 +2,25 @@
 #include <vector>
 
 template<typename T>
-T square(T a) {
-	return a * a;
+void square(T& a) {
+	a = a * a;
 }
 
 template<typename T>
-void square(std::vector<T> &v) {
-	for (T &a : v) {
+void square(std::vector<T>& v) {
+	for (T& a : v) {
 		a = a * a;
 	}
 }
 
 int main() {
 
+	int a = 4;
 	std::cout << "[in]: 4" << std::endl;
-	std::cout << "[out]: " << square(4) << std::endl;
+	square(a);
+	std::cout << "[out]: " << a << std::endl;
 
-	std::vector<double> dv = {-1, 4, 8};
+	std::vector<double> dv = { -1, 4, 8 };
 	std::cout << "[in]: -1, 4, 8" << std::endl;
 
 	square(dv);
@@ -28,5 +30,5 @@ int main() {
 		std::cout << sep << a;
 		sep = ", ";
 	}
-	
+
 }
